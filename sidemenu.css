@@ -1,0 +1,52 @@
+
+#mySidenav a {
+    position: absolute;
+    left: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+    left: 0;
+}
+
+
+#about {
+    top: 100px;
+    background-color: #4CAF50;
+}
+
+#breakfast {
+    top: 160px;
+    background-color: #A0522D;
+}
+
+#brunch {
+    top: 220px;
+    background-color: #f44336;
+}
+
+#lunch {
+    top: 280px;
+    background-color: #FFA500
+}
+
+#dinner {
+    top: 340px;
+    background-color: #4CAF50;
+}
+
+#dessert {
+    top: 400px;
+    background-color: #A0522D;
+}
+
+#all {
+    top: 460px;
+    background-color: #f44336;
+}
