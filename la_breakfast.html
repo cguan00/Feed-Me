@@ -4,6 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Simple Leaflet Map</title>
+  <meta charset="utf-8" />
+  <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+  />
   <body>
 </head>
 <body>
@@ -26,7 +32,6 @@
 
 </div>
 
-  <div>
   <center>
 
     <h2> 1. <a href="bolt.html">Bolt</a></h2>
@@ -59,13 +64,40 @@
     <p>   Website link: <a href="http://www.jonandvinnys.com/">http://www.jonandvinnys.com/</a></p>
 
 
-  </center>
-  </div>
-  <style>
-  body{
-            background-color: 	#FFFFFF
-          }
+    <div id="map" style="width: 600px; height: 400px"></div>
 
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
 
+    <script>
+
+	var planes = [
+		["Bolt",34.1014860,-118.3132210],
+		["Cafe Gratitude",34.0828060,-118.3240490],
+		["Blu Jam Cafe",34.0837750,-118.3505320],
+		["Republique",34.0641410,-118.3437010],
+		["Jon & Vinny's",34.0786340,-118.3612380],
+		];
+
+        var map = L.map('map').setView([34.0641410,-118.3437010], 12);
+        mapLink =
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+
+		for (var i = 0; i < planes.length; i++) {
+			marker = new L.marker([planes[i][1],planes[i][2]])
+				.bindPopup(planes[i][0])
+				.addTo(map);
+		}
+
+    </script>
+
+</center>
 </body>
 </html>
+
