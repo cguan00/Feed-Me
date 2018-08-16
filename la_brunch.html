@@ -4,7 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <body>
+  <title>Simple Leaflet Map</title>
+  <meta charset="utf-8" />
+  <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+  />
 </head>
 <body>
   <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
@@ -61,11 +66,39 @@
 
   </center>
   </div>
-  <style>
-  body{
-            background-color: 	#FFFFFF
-          }
+  <div id="map" style="width: 600px; height: 400px"></div>
 
+  <script
+      src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+  </script>
 
+  <script>
+
+	var planes = [
+		["Eggslut",34.0506550,-118.2487950],
+		["Bardonna",34.0741810,-118.3239720],
+		["Urth Caffé",34.0420240,-118.2354390],
+		["Great White",33.9877320,-118.4717930],
+		["Paramount Coffee Project",34.0797820,-118.3612840],
+		];
+
+        var map = L.map('map').setView([34.0641410,-118.3437010], 12);
+        mapLink =
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+
+		for (var i = 0; i < planes.length; i++) {
+			marker = new L.marker([planes[i][1],planes[i][2]])
+				.bindPopup(planes[i][0])
+				.addTo(map);
+		}
+
+    </script>
+
+</center>
 </body>
 </html>
