@@ -1,106 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=6">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Simple Leaflet Map</title>
-    <meta charset="utf-8" />
-    <link
-        rel="stylesheet"
-        href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
-    />
-  </head>
-  <body>
-    <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
+<head>
+  <title>LA Dinner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=6">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+  <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+  />
+</head>
+<body>
+  <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
 
-    style="width:70px">
-      <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
-      <a href="la_breakfast.html" class="w3-bar-item w3-button"><i class="fa fa-sun-o"></i></a>
-      <a href="la_brunch.html" class="w3-bar-item w3-button"><i class="fa fa-coffee"></i></a>
-      <a href="la_lunch.html" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i></a>
-      <a href="la_dinner.html" class="w3-bar-item w3-button"><i class="fa fa-moon-o"></i></a>
-      <a href="la_dessert.html" class="w3-bar-item w3-button"><i class="fa fa-birthday-cake"></i></a>
-    </div>
+  style="width:70px">
+    <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+    <a href="la_breakfast.html" class="w3-bar-item w3-button"><i class="fa fa-sun-o"></i></a>
+    <a href="la_brunch.html" class="w3-bar-item w3-button"><i class="fa fa-coffee"></i></a>
+    <a href="la_lunch.html" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i></a>
+    <a href="la_dinner.html" class="w3-bar-item w3-button"><i class="fa fa-moon-o"></i></a>
+    <a href="la_dessert.html" class="w3-bar-item w3-button"><i class="fa fa-birthday-cake"></i></a>
+  </div>
 
-    <div style="margin-left:70px">
+  <div style="margin-left:70px">
 
-    <div class="w3-container">
-
-    </div>
+  <div class="w3-container">
 
   </div>
 
-    <div>
-    <center>
+</div>
 
-      <h2> 1. <a href="makani.html">Makani</a></h2>
-      <p>   Address: 512 Rose Ave F Venice, CA 90291 </p>
-      <p>   Star Rating: 4.5 / 5 </p>
-      <p>   Website link: <a href="https://www.makanivenice.com/">https://www.makanivenice.com/</a></p>
+<center>
 
+    <div id="map" style="width: 500px; height: 350px"></div>
 
-      <h2>2. <a href="tesse.html">Tesse Restaurant</a></h2>
-      <p>   Address: 8500 Sunset Blvd ste b, West Hollywood, CA 90069 </p>
-      <p>   Star Rating: 4.4 / 5</p>
-      <p>   Website link: <a href="https://tesserestaurant.com/">https://tesserestaurant.com/</a></p>
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
 
+    <script>
 
-      <h2>3. <a href="apl.html">APL Restaurant</a></h2>
-      <p>   Address: 1680 Vine St, Los Angeles, CA 90028 </p>
-      <p>   Star Rating: 4 / 5</p>
-      <p>   Website link: <a href="https://aplrestaurant.com/">https://aplrestaurant.com/</a></p>
+	var planes = [
+		["Makani",33.9979820,-118.4737360],
+		["Tesse Restaurant",34.0937040,-118.3766460],
+		["APL Restaurant",34.1014410,-118.3263750],
+		["Dama",34.0352490,-118.2530210],
+		["Joy",34.1215660,-118.2073720],
+		];
 
+        var map = L.map('map').setView([34.1014410,-118.3263750], 10);
+        mapLink =
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
 
-      <h2>4. <a href="dama.html">Dama</a></h2>
-      <p>   Address: 612 E 11th St, Los Angeles, CA 90015 </p>
-      <p>   Star Rating: 5 / 5</p>
-      <p>   Website link: <a href="http://damafashiondistrict.com/">http://damafashiondistrict.com/</a></p>
+		for (var i = 0; i < planes.length; i++) {
+			marker = new L.marker([planes[i][1],planes[i][2]])
+				.bindPopup(planes[i][0])
+				.addTo(map);
+		}
 
+    </script>
 
-      <h2>5. <a href="joy.html">Joy</a></h2>
-      <p>   Address: 100 York Blvd, Los Angeles, CA 90042 </p>
-      <p>   Star Rating: 4.6 / 5</p>
-      <p>   Website link: <a href="https://www.joyonyork.com/">https://www.joyonyork.com/</a></p>
-
-
-      <div id="map" style="width: 600px; height: 400px"></div>
-
-      <script
-          src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
-      </script>
-
-      <script>
-
-  	var planes = [
-  		["Makani",33.9979820,-118.4737360],
-  		["Tesse Restaurant",34.0937040,-118.3766460],
-  		["APL Restaurant",34.1014410,-118.3263750],
-  		["Dama",34.0352490,-118.2530210],
-  		["Joy",34.1215660,-118.2073720],
-  		];
-
-          var map = L.map('map').setView([34.1014410,-118.3263750], 10);
-          mapLink =
-              '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-          L.tileLayer(
-              'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-              attribution: '&copy; ' + mapLink + ' Contributors',
-              maxZoom: 18,
-              }).addTo(map);
-
-  		for (var i = 0; i < planes.length; i++) {
-  			marker = new L.marker([planes[i][1],planes[i][2]])
-  				.bindPopup(planes[i][0])
-  				.addTo(map);
-  		}
-
-      </script>
-
-    </center>
-    </div>
+    <h2> 1. <a href="makani.html">Makani</a></h2>
+    <p>   Address: 512 Rose Ave F Venice, CA 90291 </p>
+    <p>   Star Rating: 4.5 / 5 </p>
+    <p>   Website link: <a href="https://www.makanivenice.com/">https://www.makanivenice.com/</a></p>
 
 
-  </body>
+    <h2>2. <a href="tesse.html">Tesse Restaurant</a></h2>
+    <p>   Address: 8500 Sunset Blvd ste b, West Hollywood, CA 90069 </p>
+    <p>   Star Rating: 4.4 / 5</p>
+    <p>   Website link: <a href="https://tesserestaurant.com/">https://tesserestaurant.com/</a></p>
+
+
+    <h2>3. <a href="apl.html">APL Restaurant</a></h2>
+    <p>   Address: 1680 Vine St, Los Angeles, CA 90028 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://aplrestaurant.com/">https://aplrestaurant.com/</a></p>
+
+
+    <h2>4. <a href="dama.html">Dama</a></h2>
+    <p>   Address: 612 E 11th St, Los Angeles, CA 90015 </p>
+    <p>   Star Rating: 5 / 5</p>
+    <p>   Website link: <a href="http://damafashiondistrict.com/">http://damafashiondistrict.com/</a></p>
+
+
+    <h2>5. <a href="joy.html">Joy</a></h2>
+    <p>   Address: 100 York Blvd, Los Angeles, CA 90042 </p>
+    <p>   Star Rating: 4.6 / 5</p>
+    <p>   Website link: <a href="https://www.joyonyork.com/">https://www.joyonyork.com/</a></p>
+
+
+
+</center>
+</body>
 </html>
