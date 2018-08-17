@@ -15,13 +15,14 @@
 <body>
   <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
 
-  style="width:70px">
-    <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
-    <a href="la_breakfast.html" class="w3-bar-item w3-button"><i class="fa fa-sun-o"></i></a>
-    <a href="la_brunch.html" class="w3-bar-item w3-button"><i class="fa fa-coffee"></i></a>
-    <a href="la_lunch.html" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i></a>
-    <a href="la_dinner.html" class="w3-bar-item w3-button"><i class="fa fa-moon-o"></i></a>
-    <a href="la_dessert.html" class="w3-bar-item w3-button"><i class="fa fa-birthday-cake"></i></a>
+  style="width:90px">
+    <a href="index.html"><img src ="home.png" alt = "home" width="px" height="80px"></a>
+    <a href="la_breakfast.html"><img src ="pancakes.png" alt = "pancakes" width="px" height="80px"></a>
+    <a href="la_brunch.html"><img src ="brunchplate.png" alt = "brunch" width="px" height="80px"></a>
+    <a href="la_lunch.html"><img src ="spaghetti.png" alt = "spaghetti" width="px" height="80px"></a>
+    <a href="la_dinner.html"><img src ="dinner.png" alt = "dinner" width="px" height="80px"></a>
+    <a href="la_dessert.html"><img src ="icecream.png" alt = "icecream" width="px" height="80px"></a>
+    <a href="LAall.html"><img src ="all.png" alt = "all" width="px" height="80px"></a>
   </div>
 
   <div style="margin-left:70px">
@@ -41,7 +42,6 @@
     </script>
 
     <script>
-
     var planes = [
     ["Afters Ice Cream",33.9876180,-118.4740170],
     ["B Sweet Dessert Bar",34.0405390,-118.4438280],
@@ -49,7 +49,6 @@
     ["FrankieLucy Bakeshop",34.0847460,-118.2748000],
     ["The Pie Hole",34.1014900,-118.3271220],
     ];
-
         var map = L.map('map').setView([34.0348320,-118.4784930], 10);
         mapLink =
             '<a href="http://openstreetmap.org">OpenStreetMap</a>';
@@ -58,13 +57,11 @@
             attribution: '&copy; ' + mapLink + ' Contributors',
             maxZoom: 18,
             }).addTo(map);
-
     for (var i = 0; i < planes.length; i++) {
       marker = new L.marker([planes[i][1],planes[i][2]])
         .bindPopup(planes[i][0])
         .addTo(map);
     }
-
     </script>
 
     <h2> 1. <a href="aftersicecream.html">Afters Ice Cream</a></h2>
