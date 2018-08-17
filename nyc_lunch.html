@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NYC Lunch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=6">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+  <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+  />
+</head>
+<body>
+  <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
+
+  style="width:90px">
+    <a href="index.html"><img src ="home.png" alt = "home" width="px" height="80px"></a>
+    <a href="nyc_breakfast.html"><img src ="pancakes.png" alt = "pancakes" width="px" height="80px"></a>
+    <a href="nyc_brunch.html"><img src ="brunchplate.png" alt = "brunch" width="px" height="80px"></a>
+    <a href="nyc_lunch.html"><img src ="spaghetti.png" alt = "spaghetti" width="px" height="80px"></a>
+    <a href="nyc_dinner.html"><img src ="dinner.png" alt = "dinner" width="px" height="80px"></a>
+    <a href="nyc_dessert.html"><img src ="icecream.png" alt = "icecream" width="px" height="80px"></a>
+    <a href="nyc_all.html"><img src ="all.png" alt = "all" width="px" height="80px"></a>
+  </div>
+
+  <div style="margin-left:70px">
+
+  <div class="w3-container">
+
+  </div>
+
+</div>
+
+<center>
+
+    <div id="map" style="width: 500px; height: 350px"></div>
+
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
+
+    <script>
+    var planes = [
+    ["Otto's Tacos",40.7344970,-74.0020670],
+    ["Catch NYC",40.7402270,-74.0063400],
+    ["NOMO Kitchen",40.7197960,-74.0000360],
+    ["Fish Cheeks",40.7257420,-73.9926820],
+    ["Eataly NYC Flatiron",40.7419930,-73.9899360],
+    ];
+        var map = L.map('map').setView([40.7257420,-73.9926820], 13);
+        mapLink =
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+    for (var i = 0; i < planes.length; i++) {
+      marker = new L.marker([planes[i][1],planes[i][2]])
+        .bindPopup(planes[i][0])
+        .addTo(map);
+    }
+    </script>
+
+    <h2> 1. <a href="ottostacos.html">Otto's Tacos</a></h2>
+    <p>   Address: 131 7th Ave S, New York, NY 10014 </p>
+    <p>   Star Rating: 4.2 / 5 </p>
+    <p>   Website link: <a href="http://ottostacos.com/ "> http://ottostacos.com/ </a></p>
+
+
+    <h2>2. <a href="catchnyc.html">Catch NYC</a></h2>
+    <p>   Address: 21 9th Ave, New York, NY 10014 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://catchrestaurants.com/catchnyc/">https://catchrestaurants.com/catchnyc/</a></p>
+
+
+    <h2>3. <a href="nomokitchen.html">NOMO Kitchen</a></h2>
+    <p>   Address: 9 Crosby St, New York, NY 10013 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://nomosoho.com/nomo-kitchen/">https://nomosoho.com/nomo-kitchen/</a></p>
+
+
+    <h2>4. <a href="fishcheeks.html">Fish Cheeks</a></h2>
+    <p>   Address: 55 Bond St, New York, NY 10012 </p>
+    <p>   Star Rating: 4.6 / 5</p>
+    <p>   Website link: <a href="http://www.fishcheeksnyc.com/">http://www.fishcheeksnyc.com/</a></p>
+
+
+    <h2>5. <a href="eataly.html">Eataly NYC Flatiron</a></h2>
+    <p>   Address:  200 5th Ave, New York, NY 10010 </p>
+    <p>   Star Rating: 4.5 / 5</p>
+    <p>   Website link: <a href="https://www.eataly.com/us_en/">https://www.eataly.com/us_en/</a></p>
+
+</center>
+</body>
+</html>
