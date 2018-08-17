@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NYC Dinner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=6">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+  <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+  />
+</head>
+<body>
+   <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
+
+   style="width:90px">
+     <a href="index.html"><img src ="home.png" alt = "home" width="px" height="80px"></a>
+     <a href="nyc_breakfast.html"><img src ="pancakes.png" alt = "pancakes" width="px" height="80px"></a>
+     <a href="nyc_brunch.html"><img src ="brunchplate.png" alt = "brunch" width="px" height="80px"></a>
+     <a href="nyc_lunch.html"><img src ="spaghetti.png" alt = "spaghetti" width="px" height="80px"></a>
+     <a href="nyc_dinner.html"><img src ="dinner.png" alt = "dinner" width="px" height="80px"></a>
+     <a href="nyc_dessert.html"><img src ="icecream.png" alt = "icecream" width="px" height="80px"></a>
+     <a href="nyc_all.html"><img src ="all.png" alt = "all" width="px" height="80px"></a>
+   </div>
+
+   <div style="margin-left:70px">
+
+   <div class="w3-container">
+
+   </div>
+
+ </div>
+
+  <div style="margin-left:70px">
+
+  <div class="w3-container">
+
+  </div>
+
+</div>
+
+<center>
+
+    <div id="map" style="width: 500px; height: 350px"></div>
+
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
+
+    <script>
+
+	var planes = [
+		["Okonomi",40.7125270,-73.9487830],
+		["Pietro Nolita",40.7209920,-73.9946530],
+		["Kish-Kash",40.7314080,-74.0069920],
+		["Seamore's",40.7207590,-73.9970030],
+		["Epistrophy",40.7212140,-73.9954680],
+		];
+
+        var map = L.map('map').setView([40.7139990,-73.9730450], 13);
+        mapLink =
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+
+		for (var i = 0; i < planes.length; i++) {
+			marker = new L.marker([planes[i][1],planes[i][2]])
+				.bindPopup(planes[i][0])
+				.addTo(map);
+		}
+
+    </script>
+
+    <h2> 1. <a href="okonomi.html">Okonomi</a></h2>
+    <p>   Address: 150 Ainslie, Brooklyn, NY 11211 </p>
+    <p>   Star Rating: 4.6 / 5 </p>
+    <p>   Website link: <a href="http://www.okonomibk.com/">http://www.okonomibk.com/</a></p>
+
+
+    <h2>2. <a href="pietronolita.html">Pietro Nolita</a></h2>
+    <p>   Address: 174 Elizabeth St, New York, NY 10012 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://www.pietronolita.com/">https://www.pietronolita.com/</a></p>
+
+
+    <h2>3. <a href="kishkash.html">Kish-Kash</a></h2>
+    <p>   Address: 455 Hudson St New York, NY 10014 </p>
+    <p>   Star Rating: 4.3 / 5</p>
+    <p>   Website link: <a href="https://www.kishkashnyc.com/">https://www.kishkashnyc.com/</a></p>
+
+
+    <h2>4. <a href="seamores.html">Seamore's</a></h2>
+    <p>   Address: 390 Broome St, New York, NY 10013 </p>
+    <p>   Star Rating: 4.3 / 5</p>
+    <p>   Website link: <a href="https://www.seamores.com/">https://www.seamores.com/</a></p>
+
+
+    <h2>5. <a href="epistrophy.html">Epistrophy</a></h2>
+    <p>   Address: 200 Mott St, New York, NY 100122 </p>
+    <p>   Star Rating: 4.2 / 5</p>
+    <p>   Website link: <a href="http://epistrophynyc.com/">http://epistrophynyc.com/</a></p>
+
+
+
+</center>
+</body>
+</html>
