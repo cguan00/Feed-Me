@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NYC Breakfast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=6">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+  <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+  />
+</head>
+<body>
+  <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
+
+  style="width:90px">
+    <a href="index.html"><img src ="home.png" alt = "home" width="px" height="80px"></a>
+    <a href="nyc_breakfast.html"><img src ="pancakes.png" alt = "pancakes" width="px" height="80px"></a>
+    <a href="nyc_brunch.html"><img src ="brunchplate.png" alt = "brunch" width="px" height="80px"></a>
+    <a href="nyc_lunch.html"><img src ="spaghetti.png" alt = "spaghetti" width="px" height="80px"></a>
+    <a href="nyc_dinner.html"><img src ="dinner.png" alt = "dinner" width="px" height="80px"></a>
+    <a href="nyc_dessert.html"><img src ="icecream.png" alt = "icecream" width="px" height="80px"></a>
+    <a href="nyc_all.html"><img src ="all.png" alt = "all" width="px" height="80px"></a>
+  </div>
+
+  <div style="margin-left:70px">
+
+  <div class="w3-container">
+
+  </div>
+
+</div>
+
+<center>
+
+    <div id="map" style="width: 500px; height: 350px"></div>
+
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
+
+    <script>
+    var planes = [
+    ["Egg Shop",40.7204160,-73.9952840],
+    ["Jack's Wife Freda",40.7221250,-73.9975340],
+    ["Sullivan Street Bakery",40.7473220,-74.0004690],
+    ["Cookshop",40.7455190,-74.0054830],
+    ["Buvette",40.7326260,-74.0043280],
+    ["While We Were Young",40.7343950,-74.0027100],
+		["Citizens of Chelsea",40.7481200,-74.0006100],
+		["Bluestone Lane",40.7300130,-74.0028480],
+		["Two Hands",40.7196980,-73.9960070],
+		["Upland",40.7415510,-73.9851670],
+    ["Otto's Tacos",40.7344970,-74.0020670],
+    ["Catch NYC",40.7402270,-74.0063400],
+    ["NOMO Kitchen",40.7197960,-74.0000360],
+    ["Fish Cheeks",40.7257420,-73.9926820],
+    ["Eataly NYC Flatiron",40.7419930,-73.9899360],
+    ["Okonomi",40.7125270,-73.9487830],
+		["Pietro Nolita",40.7209920,-73.9946530],
+		["Kish-Kash",40.7314080,-74.0069920],
+		["Seamore's",40.7207590,-73.9970030],
+		["Epistrophy",40.7212140,-73.9954680],
+    ["Taiyaki NYC",40.7179110,-73.9988650],
+    ["Dō",40.7291240,-73.9983490],
+    ["Dominique Ansel Bakery",40.7252360,-74.0028910],
+    ["Eggloo",40.7155050,-73.9993240],
+    ["Amorino",40.7422650,-74.0004260],
+    ];
+        var map = L.map('map').setView([40.7204160,-73.9952840], 12);
+        mapLink =
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+    for (var i = 0; i < planes.length; i++) {
+      marker = new L.marker([planes[i][1],planes[i][2]])
+        .bindPopup(planes[i][0])
+        .addTo(map);
+    }
+    </script>
+
+    <h2> 1. <a href="eggshop.html">Egg Shop</a></h2>
+    <p>   Address: 151 Elizabeth St, New York, NY 10012 </p>
+    <p>   Star Rating: 4.2 / 5 </p>
+    <p>   Website link: <a href="https://www.eggshopnyc.com/ "> https://www.eggshopnyc.com/ </a></p>
+
+
+    <h2>2. <a href="jackswife.html">Jack's Wife Freda</a></h2>
+    <p>   Address: 224 Lafayette St, New York, NY 10012 </p>
+    <p>   Star Rating: 4.4 / 5</p>
+    <p>   Website link: <a href="http://jackswifefreda.com/">http://jackswifefreda.com/</a></p>
+
+
+    <h2>3. <a href="sullivanstreet.html">Sullivan Street Bakery</a></h2>
+    <p>   Address: 236 9th Ave, New York, NY 10011 </p>
+    <p>   Star Rating: 4.5 / 5</p>
+    <p>   Website link: <a href="https://www.sullivanstreetbakery.com/chelsea">https://www.sullivanstreetbakery.com/chelsea</a></p>
+
+
+    <h2>4. <a href="cookshop.html">Cookshop</a></h2>
+    <p>   Address: 156 10th Ave, New York, NY 10011 </p>
+    <p>   Star Rating: 4.4 / 5</p>
+    <p>   Website link: <a href="http://cookshopny.com/">http://cookshopny.com/</a></p>
+
+
+    <h2>5. <a href="buvette.html">Buvette</a></h2>
+    <p>   Address: 42 Grove St, New York, NY 10014 </p>
+    <p>   Star Rating: 4.5 / 5</p>
+    <p>   Website link: <a href="https://ilovebuvette.com/about/">https://ilovebuvette.com/about/</a></p>
+
+    <h2> 6. <a href="whilewewereyoung.html">While We Were Young</a></h2>
+    <p>   Address: 183 W 10th St, New York, NY 10014 </p>
+    <p>   Star Rating: 4.2 / 5 </p>
+    <p>   Website link: <a href="https://www.whilewewereyoungnyc.com/">https://www.whilewewereyoungnyc.com/</a></p>
+
+
+    <h2>7. <a href="citizenschelsea.html">Citizens of Chelsea</a></h2>
+    <p>   Address: 401 W 25th St, New York, NY 10001 </p>
+    <p>   Star Rating: 4.4 / 5</p>
+    <p>   Website link: <a href="http://www.citizensofchelsea.com/">http://www.citizensofchelsea.com/</a></p>
+
+
+    <h2>8. <a href="bluestone.html">Bluestone Lane</a></h2>
+    <p>   Address: 30 Carmine St, New York, NY 10014 </p>
+    <p>   Star Rating: 4.4 / 5</p>
+    <p>   Website link: <a href="https://bluestonelane.com/cafes/west-village-carmine-st/">https://bluestonelane.com/cafes/west-village-carmine-st/</a></p>
+
+
+    <h2>9. <a href="twohands.html">Two Hands</a></h2>
+    <p>   Address: 164 Mott St, New York, NY 10013 </p>
+    <p>   Star Rating: 4.1 / 5</p>
+    <p>   Website link: <a href="https://www.twohandsnyc.com/">https://www.twohandsnyc.com/</a></p>
+
+
+    <h2>10. <a href="upland.html">Upland</a></h2>
+    <p>   Address: 345 Park Ave S, New York, NY 10010 </p>
+    <p>   Star Rating: 4.5 / 5</p>
+    <p>   Website link: <a href="https://uplandnyc.com/">https://uplandnyc.com/</a></p>
+
+    <h2> 11. <a href="ottostacos.html">Otto's Tacos</a></h2>
+    <p>   Address: 131 7th Ave S, New York, NY 10014 </p>
+    <p>   Star Rating: 4.2 / 5 </p>
+    <p>   Website link: <a href="http://ottostacos.com/ "> http://ottostacos.com/ </a></p>
+
+
+    <h2>12. <a href="catchnyc.html">Catch NYC</a></h2>
+    <p>   Address: 21 9th Ave, New York, NY 10014 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://catchrestaurants.com/catchnyc/">https://catchrestaurants.com/catchnyc/</a></p>
+
+
+    <h2>13. <a href="nomokitchen.html">NOMO Kitchen</a></h2>
+    <p>   Address: 9 Crosby St, New York, NY 10013 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://nomosoho.com/nomo-kitchen/">https://nomosoho.com/nomo-kitchen/</a></p>
+
+
+    <h2>14. <a href="fishcheeks.html">Fish Cheeks</a></h2>
+    <p>   Address: 55 Bond St, New York, NY 10012 </p>
+    <p>   Star Rating: 4.6 / 5</p>
+    <p>   Website link: <a href="http://www.fishcheeksnyc.com/">http://www.fishcheeksnyc.com/</a></p>
+
+
+    <h2>15. <a href="eataly.html">Eataly NYC Flatiron</a></h2>
+    <p>   Address:  200 5th Ave, New York, NY 10010 </p>
+    <p>   Star Rating: 4.5 / 5</p>
+    <p>   Website link: <a href="https://www.eataly.com/us_en/">https://www.eataly.com/us_en/</a></p>
+
+    <h2> 16. <a href="okonomi.html">Okonomi</a></h2>
+    <p>   Address: 150 Ainslie, Brooklyn, NY 11211 </p>
+    <p>   Star Rating: 4.6 / 5 </p>
+    <p>   Website link: <a href="http://www.okonomibk.com/">http://www.okonomibk.com/</a></p>
+
+
+    <h2>17. <a href="pietronolita.html">Pietro Nolita</a></h2>
+    <p>   Address: 174 Elizabeth St, New York, NY 10012 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://www.pietronolita.com/">https://www.pietronolita.com/</a></p>
+
+
+    <h2>18. <a href="kishkash.html">Kish-Kash</a></h2>
+    <p>   Address: 455 Hudson St New York, NY 10014 </p>
+    <p>   Star Rating: 4.3 / 5</p>
+    <p>   Website link: <a href="https://www.kishkashnyc.com/">https://www.kishkashnyc.com/</a></p>
+
+
+    <h2>19. <a href="seamores.html">Seamore's</a></h2>
+    <p>   Address: 390 Broome St, New York, NY 10013 </p>
+    <p>   Star Rating: 4.3 / 5</p>
+    <p>   Website link: <a href="https://www.seamores.com/">https://www.seamores.com/</a></p>
+
+
+    <h2>20. <a href="epistrophy.html">Epistrophy</a></h2>
+    <p>   Address: 200 Mott St, New York, NY 100122 </p>
+    <p>   Star Rating: 4.2 / 5</p>
+    <p>   Website link: <a href="http://epistrophynyc.com/">http://epistrophynyc.com/</a></p>
+
+    <h2> 21. <a href="taiyaki.html">Taiyaki NYC</a></h2>
+    <p>   Address: 119 Baxter St, New York, NY 10013 </p>
+    <p>   Star Rating: 4.5 / 5 </p>
+    <p>   Website link: <a href=" https://taiyakinyc.com/ "> https://taiyakinyc.com/</a></p>
+
+
+    <h2>22. <a href="do.html">Dō</a></h2>
+    <p>   Address: 550 LaGuardia Place, New York, NY, 10012 </p>
+    <p>   Star Rating: 3.5 / 5</p>
+    <p>   Website link: <a href="https://www.cookiedonyc.com/cookie-dough-confections">https://www.cookiedonyc.com/cookie-dough-confections</a></p>
+
+
+    <h2>23. <a href="dabakery.html">Dominique Ansel Bakery</a></h2>
+    <p>   Address: 189 Spring Street, New York, NY, 10012 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://dominiqueansel.com/">https://dominiqueansel.com/</a></p>
+
+
+    <h2>24. <a href="eggloo.html">Eggloo</a></h2>
+    <p>   Address: 60 Mulberry Street New York, New York, 10013 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://www.myeggloo.com/">https://www.myeggloo.com/</a></p>
+
+
+    <h2>25. <a href="amorino.html">Amorino</a></h2>
+    <p>   Address: 162 8th Ave New York, NY 10011 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://www.amorino.com/us/">https://www.amorino.com/us/</a></p>
+
+</center>
+</body>
+</html>
