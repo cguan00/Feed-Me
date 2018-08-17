@@ -1,21 +1,107 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Feed Me</title>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>index</title>
+        <style type="text/css">
 
-<body>
-    <center>
-      </br>
-      </br>
-      </br>
-      <a href="index.html"><img src ="feedMeLogo.png" alt = "Feed Me Logo" width="325px" height="390px"></a>
-      </br>
-      </br>
-      </br>
-      </br>
-      <a href="destination.html"><img src="click.png" alt="Click to start" width="300px" height="50px" ></a>
-    </center>
-</body>
+        * {
+             margin: 0;
+             padding: 0;
+         }
+         body {
+              background: url(yummy.gif);
+              background-repeat: no-repeat;
+              background-size: 1280px 720px;
+         }
+         .fly-in-text {
+             list-style: none;
+             position: absolute;
+             left: 50%;
+             top: 50%;
+             transform: translateX(-80%) translateY(-250%);
+         }
+         .fly-in-text li {
+            display: inline-block;
+            margin-right: 50px;
+            font-family: Verdana;
+            font-weight: 1000;
+            font-size: 55px;
+            color: #fff;
+            opacity: 1;
+            transition: all 2.5s ease;
+         }
 
+       }
+       .fly-in-text li:last-child {
+       margin-right: 6;
+
+     }
+     .fly-in-text.hidden li {
+      opacity: 0;
+
+     }
+
+    .fly-in-text.hidden li:nth-child(2) { transform:translateX(20px) translateY(100px); }
+    .fly-in-text.hidden li:nth-child(3) { transform:translateX(-150px) translateY(-80px); }
+    .fly-in-text.hidden li:nth-child(4) { transform:translateX(10px) translateY(-200px); }
+    .fly-in-text.hidden li:nth-child(5) { transform:translateX(-300px) translateY(200px); }
+    .fly-in-text.hidden li:nth-child(6) { transform:translateX(20px) translateY(-20px); }
+    .fly-in-text.hidden li:nth-child(7) { transform:translateX(30px) translateY(200px); }
+
+    .button {
+
+        background-color: #4CAF50;
+        font-weight: 1000;
+        border: none;
+        color: white;
+        padding: 25px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 30px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transform:translateX(350px) translateY(200px);
+    }
+
+
+        </style>
+    </head>
+    <body>
+
+      <ul class="fly-in-text hidden">
+          <li>F</li>
+          <li>E</li>
+          <li>E</li>
+          <li>D</li>
+          <li></li>
+          <li>M</li>
+          <li>E</li>
+      </ul>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script type="text/javascript">
+
+          $(function() {
+
+            setTimeout(function() {
+              $('.fly-in-text').removeClass('hidden');
+          }, 500);
+
+      })();
+
+
+
+    </script>
+
+      <a href="destination.html" class="button">start</a>
+
+
+
+  </style>
+
+    </body>
 </html>
+
