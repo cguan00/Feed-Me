@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NYC Brunch</title>
+  <title>LA Brunch</title>
   <meta name="viewport" content="width=device-width, initial-scale=6">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -13,25 +13,17 @@
   />
 </head>
 <body>
-   <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
+  <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
 
-   style="width:90px">
-     <a href="index.html"><img src ="home.png" alt = "home" width="px" height="80px"></a>
-     <a href="nyc_breakfast.html"><img src ="pancakes.png" alt = "pancakes" width="px" height="80px"></a>
-     <a href="nyc_brunch.html"><img src ="brunchplate.png" alt = "brunch" width="px" height="80px"></a>
-     <a href="nyc_lunch.html"><img src ="spaghetti.png" alt = "spaghetti" width="px" height="80px"></a>
-     <a href="nyc_dinner.html"><img src ="dinner.png" alt = "dinner" width="px" height="80px"></a>
-     <a href="nyc_dessert.html"><img src ="icecream.png" alt = "icecream" width="px" height="80px"></a>
-     <a href="nyc_all.html"><img src ="all.png" alt = "all" width="px" height="80px"></a>
-   </div>
-
-   <div style="margin-left:70px">
-
-   <div class="w3-container">
-
-   </div>
-
- </div>
+  style="width:90px">
+    <a href="index.html"><img src ="home.png" alt = "home" width="px" height="80px"></a>
+    <a href="la_breakfast.html"><img src ="pancakes.png" alt = "pancakes" width="px" height="80px"></a>
+    <a href="la_brunch.html"><img src ="brunchplate.png" alt = "brunch" width="px" height="80px"></a>
+    <a href="la_lunch.html"><img src ="spaghetti.png" alt = "spaghetti" width="px" height="80px"></a>
+    <a href="la_dinner.html"><img src ="dinner.png" alt = "dinner" width="px" height="80px"></a>
+    <a href="la_dessert.html"><img src ="icecream.png" alt = "icecream" width="px" height="80px"></a>
+    <a href="LAall.html"><img src ="all.png" alt = "all" width="px" height="80px"></a>
+  </div>
 
   <div style="margin-left:70px">
 
@@ -41,25 +33,25 @@
 
 </div>
 
-<center>
+  <center>
 
-    <div id="map" style="width: 500px; height: 350px"></div>
+  <div id="map" style="width: 500px; height: 350px"></div>
 
-    <script
-        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
-    </script>
+  <script
+      src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+  </script>
 
-    <script>
+  <script>
 
 	var planes = [
-		["While We Were Young",40.7343950,-74.0027100],
-		["Citizens of Chelsea",40.7481200,-74.0006100],
-		["Bluestone Lane",40.7300130,-74.0028480],
-		["Two Hands",40.7196980,-73.9960070],
-		["Upland",40.7415510,-73.9851670],
+		["Eggslut",34.0506550,-118.2487950],
+		["Bardonna",34.0741810,-118.3239720],
+		["Urth Caffé",34.0420240,-118.2354390],
+		["Great White",33.9877320,-118.4717930],
+		["Paramount Coffee Project",34.0797820,-118.3612840],
 		];
 
-        var map = L.map('map').setView([40.7343950,-74.0027100], 13);
+        var map = L.map('map').setView([34.0641410,-118.3437010], 10);
         mapLink =
             '<a href="http://openstreetmap.org">OpenStreetMap</a>';
         L.tileLayer(
@@ -76,35 +68,34 @@
 
     </script>
 
-    <h2> 1. <a href="whilewewereyoung.html">While We Were Young</a></h2>
-    <p>   Address: 183 W 10th St, New York, NY 10014 </p>
-    <p>   Star Rating: 4.2 / 5 </p>
-    <p>   Website link: <a href="https://www.whilewewereyoungnyc.com/">https://www.whilewewereyoungnyc.com/</a></p>
+    <h2> 1. <a href="eggslut.html">Eggslut</a></h2>
+    <p>   Address: 317 S Broadway, Los Angeles, CA 90013 </p>
+    <p>   Star Rating: 4.3 / 5 </p>
+    <p>   Website link: <a href="http://www.eggslut.com/">http://www.eggslut.com/</a></p>
 
 
-    <h2>2. <a href="citizenschelsea.html">Citizens of Chelsea</a></h2>
-    <p>   Address: 401 W 25th St, New York, NY 10001 </p>
-    <p>   Star Rating: 4.4 / 5</p>
-    <p>   Website link: <a href="http://www.citizensofchelsea.com/">http://www.citizensofchelsea.com/</a></p>
+    <h2>2. <a href="bardonna.html">Bardonna</a></h2>
+    <p>   Address: 139 N Larchmont Blvd, Los Angeles, CA 90004 </p>
+    <p>   Star Rating: 4.3 / 5</p>
+    <p>   Website link: <a href="https://www.bardonna.com/">https://www.bardonna.com/</a></p>
 
 
-    <h2>3. <a href="bluestone.html">Bluestone Lane</a></h2>
-    <p>   Address: 30 Carmine St, New York, NY 10014 </p>
-    <p>   Star Rating: 4.4 / 5</p>
-    <p>   Website link: <a href="https://bluestonelane.com/cafes/west-village-carmine-st/">https://bluestonelane.com/cafes/west-village-carmine-st/</a></p>
-
-
-    <h2>4. <a href="twohands.html">Two Hands</a></h2>
-    <p>   Address: 164 Mott St, New York, NY 10013 </p>
-    <p>   Star Rating: 4.1 / 5</p>
-    <p>   Website link: <a href="https://www.twohandsnyc.com/">https://www.twohandsnyc.com/</a></p>
-
-
-    <h2>5. <a href="upland.html">Upland</a></h2>
-    <p>   Address: 345 Park Ave S, New York, NY 10010 </p>
+    <h2>3. <a href="urthcaffe.html">Urth Caffé</a></h2>
+    <p>   Address: 451 S Hewitt St, Los Angeles, CA 90013 </p>
     <p>   Star Rating: 4.5 / 5</p>
-    <p>   Website link: <a href="https://uplandnyc.com/">https://uplandnyc.com/</a></p>
+    <p>   Website link: <a href="https://www.urthcaffe.com/">https://www.urthcaffe.com/</a></p>
 
+
+    <h2>4. <a href="greatwhite.html">Great White</a></h2>
+    <p>   Address: 1604 Pacific Ave Los Angeles, CA 90291 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://greatwhitevenice.com/">https://greatwhitevenice.com/</a></p>
+
+
+    <h2>5. <a href="paramount.html">Paramount Coffee Project</a></h2>
+    <p>   Address: 456 N Fairfax Ave, Los Angeles, CA 90036 </p>
+    <p>   Star Rating: 4.6 / 5</p>
+    <p>   Website link: <a href="http://www.pcpfx.com/">http://www.pcpfx.com/</a></p>
 
 
 </center>
