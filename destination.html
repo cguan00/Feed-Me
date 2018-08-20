@@ -1,58 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Destination</title>
-  <style>
-  .dropbtn {
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.dropbtn {
+    text-indent: 10px;
+    font-weight: 300px;
+    width: 700px;
+    height: 70px;
+    border-radius: 50px;
     background-color: #FFFFFF;
-      color: lightgrey;
-      font-family: "Arial", Times, serif;
-      font-size: 50px;
-      padding: 10px;
-      border-radius: 10px;
-      -moz-border-radius: 10px;
-      -webkit-border-radius: 10px;
-      margin:10px
-  }
-  .dropdown {
-      position: relative;
-      display: inline-block;
-  }
-  .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #FFFFFF;
-      min-width: 820px;
-      /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
-      z-index: 1;
-  }
-  .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-  }
-  .dropdown-content a:hover {background-color: #ddd;}
-  .dropdown:hover .dropdown-content {display: block;}
-  .dropdown:hover .dropbtn {background-color: #f1f1f1;}
+    color: grey;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    position: relative;
+
+
+}
+
+.dropdown {
+    display: flex;
+    display: inline-block;
+    justify-content: center;
+    position: relative;
+}
+
+.dropdown-content {
+    padding-right: 10;
+    display: none;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;;
+    text-decoration: none;
+    display: block;
+}
+
+
+a.fa-search {
+  width: 70px;
+  height: 70px;
+  background-color: tomato;
+  border-radius: 50px;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  line-height: 70px;
+  font-size: 22px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  transition: all .3s;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #FFFFFF;}
+
+a.fa-search.hover {
+  transform: rotate(100deg);
+  transform-origin: center;
+}
 </style>
 </head>
 <body>
+  <center>
+    <br>
+    <br>
+  <h1 style="font-family:'Arial'; color: white; font-weight: 900;font-size:100px;">destination</h1></h1>
 
-<!-- destination heading -->
 <center>
-  <h1 style="font-family:'Arial';font-size:100px; color:#383838";>destination ⛐ </style></h1>
+<div class="dropdown">
+  <button class="dropbtn">pick a city...</button>
+  <a href="#" id= "icon" class="fa fa-search"></a>
+  <div class="dropdown-content">
+    <a href="LAall.html">Los Angeles, California</a>
+    <a href="nyc_all.html">New York City, New York</a>
 
-  <div class="dropdown">
-    <button class="dropbtn" style="width:800px;height:100px; ">pick a city 	⇣ </button>
-    <div class="dropdown-content">
-      <a href="LAall.html">Los Angeles, California</a>
-      <a href="nyc_all.html">New York City, New York</a>
-
-
-</center>
-    </div>
   </div>
+</div>
 
 </body>
 </html>
+
+<style>
+  body{
+            background-image: url("yummy3.gif");
+            background-repeat: no-repeat;
+            background-size: 1280px 720px;
+
+</style>
