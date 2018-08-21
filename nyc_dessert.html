@@ -7,33 +7,164 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-     integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-     crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-    crossorigin=""></script>
+  <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+  />
+</head>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NYC Dinner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=6">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+  <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+  />
 </head>
 <body>
-  <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
-
-  style="width:90px">
-    <a href="index.html"><img src ="home.png" alt = "home" width="px" height="80px"></a>
-    <a href="nyc_breakfast.html"><img src ="pancakes.png" alt = "pancakes" width="px" height="80px"></a>
-    <a href="nyc_brunch.html"><img src ="brunchplate.png" alt = "brunch" width="px" height="80px"></a>
-    <a href="nyc_lunch.html"><img src ="spaghetti.png" alt = "spaghetti" width="px" height="80px"></a>
-    <a href="nyc_dinner.html"><img src ="dinner.png" alt = "dinner" width="px" height="80px"></a>
-    <a href="nyc_dessert.html"><img src ="icecream.png" alt = "icecream" width="px" height="80px"></a>
-    <a href="nyc_all.html"><img src ="all.png" alt = "all" width="px" height="80px"></a>
+  <body>
+     <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
+     style="width:90px">
+ <a href="index.html">
+    <img src="home.png"
+         onmouseover="this.src='home2.png';"
+         onmouseout="this.src='home.png';"
+         height="80px"
+         width="85px"/>
+ </a>
+ <a href="nyc_breakfast.html">
+   <img src="pancakes.png"
+        onmouseover="this.src='pancakes2.png';"
+        onmouseout="this.src='pancakes.png';"
+        height="80px"
+        width="85px"/>
+ </a>
+ <a href="nyc_brunch.html">
+   <img src="brunchplate.png"
+        onmouseover="this.src='brunchplate2.png';"
+        onmouseout="this.src='brunchplate.png';"
+        height="80px"
+        width="85px"/>
+ </a>
+ <a href="nyc_lunch.html">
+   <img src="spaghetti.png"
+        onmouseover="this.src='spaghetti2.png';"
+        onmouseout="this.src='spaghetti.png';"
+        height="80px"
+        width="85px"/>
+ </a>
+ <a href="nyc_dinner.html">
+   <img src="dinner.png"
+        onmouseover="this.src='dinner2.png';"
+        onmouseout="this.src='dinner.png';"
+        height="80px"
+        width="85px"/>
+ </a>
+ <a href="nyc_dessert.html">
+   <img src="icecream.png"
+        onmouseover="this.src='icecream2.png';"
+        onmouseout="this.src='icecream.png';"
+        height="80px"
+        width="85px"/>
+ </a>
+ <a href="nyc_all.html">
+   <img src="all.png"
+        onmouseover="this.src='all2.png';"
+        onmouseout="this.src='all.png';"
+        height="80px"
+        width="85px"/>
+ </a>
+     </div>
+    <div style="margin-left:70px">
+    <div class="w3-container">
+    </div>
   </div>
+<center>
 
-  <div style="margin-left:70px">
+  <br>
+  <br>
 
-  <div class="w3-container">
+    <div id="map" style="width: 500px; height: 350px"></div>
 
-  </div>
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
 
-</div>
+    <script>
+
+	var planes = [
+		["Okonomi",40.7125270,-73.9487830],
+		["Pietro Nolita",40.7209920,-73.9946530],
+		["Kish-Kash",40.7314080,-74.0069920],
+		["Seamore's",40.7207590,-73.9970030],
+		["Epistrophy",40.7212140,-73.9954680],
+		];
+
+        var map = L.map('map').setView([40.7139990,-73.9730450], 13);
+        mapLink =
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+
+		for (var i = 0; i < planes.length; i++) {
+			marker = new L.marker([planes[i][1],planes[i][2]])
+				.bindPopup(planes[i][0])
+				.addTo(map);
+		}
+
+    </script>
+
+    <h2> 1. <a href="okonomi.html">Okonomi</a></h2>
+    <p>   Address: 150 Ainslie, Brooklyn, NY 11211 </p>
+    <p>   Star Rating: 4.6 / 5 </p>
+    <p>   Website link: <a href="http://www.okonomibk.com/">http://www.okonomibk.com/</a></p>
+    <p><i> Small Japanese place serving ramen at night & a traditional set breakfast </p>
+    <p> and lunch menu by day.</i></p>
+
+    <h2>2. <a href="pietronolita.html">Pietro Nolita</a></h2>
+    <p>   Address: 174 Elizabeth St, New York, NY 10012 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://www.pietronolita.com/">https://www.pietronolita.com/</a></p>
+    <p><i> Cozy 1950s-style bar/eatery with a pink motif offering eco-friendly Italian fare</p>
+    <p> and weekend brunch.</i></p>
+
+    <h2>3. <a href="kishkash.html">Kish-Kash</a></h2>
+    <p>   Address: 455 Hudson St New York, NY 10014 </p>
+    <p>   Star Rating: 4.3 / 5</p>
+    <p>   Website link: <a href="https://www.kishkashnyc.com/">https://www.kishkashnyc.com/</a></p>
+    <p><i> New York's new couscous-centric restaurant is Kish-Kash in the West Village. </p>
+    <p> Einat Admony, the force behind the popular Taïm falafel shop, is whipping up Moroccan</p>
+    <p> style couscous several ways. They include Three-Lemon Chicken Tagine, Slow-Cooked Lamb</p>
+    <p> with dried fruit, spicy fish called Chrime, and Tbecha Blask made with short ribs, swiss</p>
+    <p> chard, beans and potato. Rose-shaped Moroccan cookies dipped in syrup, called Debla, are</p>
+    <p> available for dessert.</i></p>
+
+
+    <h2>4. <a href="seamores.html">Seamore's</a></h2>
+    <p>   Address: 390 Broome St, New York, NY 10013 </p>
+    <p>   Star Rating: 4.3 / 5</p>
+    <p>   Website link: <a href="https://www.seamores.com/">https://www.seamores.com/</a></p>
+    <p><i> Beachy, relaxed eatery serving sustainable seafood plus beer, wine & cocktails</p>
+    <p> in light-filled digs.</i></p>
+
+    <h2>5. <a href="epistrophy.html">Epistrophy</a></h2>
+    <p>   Address: 200 Mott St, New York, NY 100122 </p>
+    <p>   Star Rating: 4.2 / 5</p>
+    <p>   Website link: <a href="http://epistrophynyc.com/">http://epistrophynyc.com/</a></p>
+    <p><i> Brick walls & bookshelves lend character to this homey spot serving Italian</p>
+    <p> fare & global wines.</i></p>
+
+</center>
+</body>
+</html>
 
 <center>
 
@@ -42,6 +173,10 @@
 
 
     <div id="map" style="width: 500px; height: 350px"></div>
+
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
 
     <script>
     var planes = [
@@ -69,7 +204,7 @@
     <h2> 1. <a href="taiyaki.html">Taiyaki NYC</a></h2>
     <p>   Address: 119 Baxter St, New York, NY 10013 </p>
     <p>   Star Rating: 4.5 / 5 </p>
-    <p>   Website link: <a href=" https://taiyakinyc.com/ " target="_blank"> https://taiyakinyc.com/</a></p>
+    <p>   Website link: <a href=" https://taiyakinyc.com/ "> https://taiyakinyc.com/</a></p>
     <p><i>A Japanese ice cream shop serving inventive flavors in a fish-shaped waffle cone </i></p>
 
 
@@ -77,26 +212,26 @@
     <h2>2. <a href="do.html">Dō</a></h2>
     <p>   Address: 550 LaGuardia Place, New York, NY, 10012 </p>
     <p>   Star Rating: 3.5 / 5</p>
-    <p>   Website link: <a href="https://www.cookiedonyc.com/cookie-dough-confections" target="_blank">https://www.cookiedonyc.com/cookie-dough-confections</a></p>
+    <p>   Website link: <a href="https://www.cookiedonyc.com/cookie-dough-confections">https://www.cookiedonyc.com/cookie-dough-confections</a></p>
     <p><i>Sweet shop devoted to cookie dough served by the pint, in sundaes and mixed into other desserts. </i></p>
 
 
     <h2>3. <a href="dabakery.html">Dominique Ansel Bakery</a></h2>
     <p>   Address: 189 Spring Street, New York, NY, 10012 </p>
     <p>   Star Rating: 4 / 5</p>
-    <p>   Website link: <a href="https://dominiqueansel.com/" target="_blank">https://dominiqueansel.com/</a></p>
+    <p>   Website link: <a href="https://dominiqueansel.com/">https://dominiqueansel.com/</a></p>
     <p><i> This bakery-cafe headed by pastry chef Dominique Ansel serves up creative & beautiful French treats.</i></p>
 
     <h2>4. <a href="eggloo.html">Eggloo</a></h2>
     <p>   Address: 60 Mulberry Street New York, New York, 10013 </p>
     <p>   Star Rating: 4 / 5</p>
-    <p>   Website link: <a href="https://www.myeggloo.com/" target="_blank">https://www.myeggloo.com/</a></p>
+    <p>   Website link: <a href="https://www.myeggloo.com/">https://www.myeggloo.com/</a></p>
     <p><i> Spot for Hong Kong egg waffles filled with ice cream & toppings, plus some savory choices.</i></p>
 
     <h2>5. <a href="amorino.html">Amorino</a></h2>
     <p>   Address: 162 8th Ave New York, NY 10011 </p>
     <p>   Star Rating: 4 / 5</p>
-    <p>   Website link: <a href="https://www.amorino.com/us/" target="_blank">https://www.amorino.com/us/</a></p>
+    <p>   Website link: <a href="https://www.amorino.com/us/">https://www.amorino.com/us/</a></p>
     <p><i> Amorino offers Italian gelato, served with a spatula without limits in the choice of flavours</i></p>
 </center>
 </body>
