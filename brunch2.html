@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LA Brunch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=6">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+</head>
+<body>
+  <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge"
+
+  style="width:90px">
+    <a href="index.html"><img src ="home.png" alt = "home" width="px" height="80px"></a>
+    <a href="la_breakfast.html"><img src ="pancakes.png" alt = "pancakes" width="px" height="80px"></a>
+    <a href="la_brunch.html"><img src ="brunchplate.png" alt = "brunch" width="px" height="80px"></a>
+    <a href="la_lunch.html"><img src ="spaghetti.png" alt = "spaghetti" width="px" height="80px"></a>
+    <a href="la_dinner.html"><img src ="dinner.png" alt = "dinner" width="px" height="80px"></a>
+    <a href="la_dessert.html"><img src ="icecream.png" alt = "icecream" width="px" height="80px"></a>
+    <a href="LAall.html"><img src ="all.png" alt = "all" width="px" height="80px"></a>
+  </div>
+
+  <div style="margin-left:70px">
+
+  <div class="w3-container">
+
+  </div>
+
+</div>
+
+  <center>
+    <br>
+    <br>
+
+  <div id="map" style="width: 500px; height: 350px"></div>
+
+  
+
+  <script>
+
+	var planes = [
+		["Eggslut",34.0506550,-118.2487950],
+		["Bardonna",34.0741810,-118.3239720],
+		["Urth Caffé",34.0420240,-118.2354390],
+		["Great White",33.9877320,-118.4717930],
+		["Paramount Coffee Project",34.0797820,-118.3612840],
+		];
+
+        var map = L.map('map').setView([34.0641410,-118.3437010], 10);
+        mapLink =
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+
+		for (var i = 0; i < planes.length; i++) {
+			marker = new L.marker([planes[i][1],planes[i][2]])
+				.bindPopup(planes[i][0])
+				.addTo(map);
+		}
+
+    </script>
+
+    <h2> 1. <a href="eggslut.html">Eggslut</a></h2>
+    <p>   Address: 317 S Broadway, Los Angeles, CA 90013 </p>
+    <p>   Star Rating: 4.3 / 5 </p>
+    <p>   Website link: <a href="http://www.eggslut.com/">http://www.eggslut.com/</a></p>
+    <p><i>Casual, egg-centric food stand in the Grand Central Market offering omelets & other American grub.</i></p>
+
+
+    <h2>2. <a href="bardonna.html">Bardonna</a></h2>
+    <p>   Address: 139 N Larchmont Blvd, Los Angeles, CA 90004 </p>
+    <p>   Star Rating: 4.3 / 5</p>
+    <p>   Website link: <a href="https://www.bardonna.com/">https://www.bardonna.com/</a></p>
+    <p><i>An urbanesque coffee shop serving great coffee, breakfast burritos, and more all day.</i></p>
+
+    <h2>3. <a href="urthcaffe.html">Urth Caffé</a></h2>
+    <p>   Address: 451 S Hewitt St, Los Angeles, CA 90013 </p>
+    <p>   Star Rating: 4.5 / 5</p>
+    <p>   Website link: <a href="https://www.urthcaffe.com/">https://www.urthcaffe.com/</a></p>
+    <p><i>Bustling coffeehouse serving extensive American menu with counter service & patio seating.</i></p>
+
+    <h2>4. <a href="greatwhite.html">Great White</a></h2>
+    <p>   Address: 1604 Pacific Ave Los Angeles, CA 90291 </p>
+    <p>   Star Rating: 4 / 5</p>
+    <p>   Website link: <a href="https://greatwhitevenice.com/">https://greatwhitevenice.com/</a></p>
+    <p><i>New American classics (burgers, sandwiches) get a California treatment (avocado toast, kale salad).</i></p>
+
+    <h2>5. <a href="paramount.html">Paramount Coffee Project</a></h2>
+    <p>   Address: 456 N Fairfax Ave, Los Angeles, CA 90036 </p>
+    <p>   Star Rating: 4.6 / 5</p>
+    <p>   Website link: <a href="http://www.pcpfx.com/">http://www.pcpfx.com/</a></p>
+    <p><i>Bright, communal space with industrial design & a quick-serve coffee counter for Australian brews.</i></p>
+
+</center>
+</body>
+</html>
